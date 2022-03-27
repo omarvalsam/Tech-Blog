@@ -30,7 +30,7 @@ router.get("/", withAuth, (req, res) => {
 });
 
 router.get("/edit/:id", withAuth, (req, res) => {
-  Post.findByOne(req.params.id, {
+  Post.findByPk(req.params.id, {
     attributes: ["id", "post_text", "title", "created_at"],
     include: [
       {
